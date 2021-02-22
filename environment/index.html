@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+
+
+	<title></title>
+	<link rel="stylesheet" href ="css/style.css" type = "text/css">
+	<link rel="stylesheet" href="css/reset.css" type = "text/css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<!--<script type="text/javascript" src="js/ethnicityReader.js"></script>-->
+
+</head>
+<body>
+	<!-- correlation graph -->
+	 <script src = "https://d3js.org/d3.v4.js"></script>
+ 	 <script src="https://unpkg.com/jeezy@1.12.11/lib/jeezy.min.js"></script>
+ 	 <script src="https://unpkg.com/data2grid@1.0.0/build/data2grid.min.js"></script>
+  	 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.3.5/chroma.min.js"></script>
+  	 <!-- correlation graph -->
+  	 
+	<!-- wrap -->
+	<div id = wrap>
+		<!--variation (화면 좌측)-->
+		<div id = variation>
+			<!--header-->
+			<header>
+				<img src="img/logo.png" width=25 height=25 alt="image" align="left" style="margin: 8px;">
+				<div id="title" align="left">DRHM-GAS</div>
+			</header>
+			<!--//header-->
+			
+			<!--s1-->
+			<div id="s1Outside" class="outside_section">
+				<span class=circle id="circle1">1</span>
+				<div class=step_name>Target Population Selection</div>
+				<!--닫혀있는 블럭에 있는 삼각형버튼: down-->
+				<!--열려있는 블럭에 있는 삼각형버튼: up-->
+				<div id = s1down class = downCover>
+					<div  class="down"></div>
+				</div>
+			</div>
+			<div id="s1Inside" class="s1Selection accordion">
+				<button type="submit" class="clear"><span>clear</span></button>
+				
+				<!-- ethnicity -->
+				<div id = Ethnicity>
+					<div class="s1factor_title"> Ethnicity </div>
+					
+							<p><input type="checkbox" class="ethnicity"><span class="s1factor" style="margin-right: 10px;">Caucasian </span>
+							<input type="checkbox"  class="ethnicity"><span class="s1factor" style="margin-right: 10px;">African American</span></p>
+							<p><input type="checkbox"  class="ethnicity"><span class="s1factor">Asian</span> 
+							<input type="checkbox"  class="ethnicity" style="margin-left:40px;"><span class="s1factor">Hispanic/Mexican American</span></p>
+	
+				</div>
+				<!-- //ethnicity -->
+				<div id= gender>
+					<div class="s1factor_title"> Gender </div>
+					<!-- male section -->
+	          		<div id = "genderSection">
+	           			<div id = "maleSection">
+	            			<input type="checkbox" class="genderCheckbox male" name="male">
+	           				<span class="s1factor">Male</span>
+	         			    <input type="text" class = "genderRatio male" name="genderRatio male" style="width: 30px; height: 10px;"  value = 0% disabled = "true">
+	            	</div>
+				    <!-- //male section -->
+	
+					<!--female section -->         
+	                <div id = "femaleSection">
+	                	<input type="checkbox" class="genderCheckbox female" name="female" style="margin-left: 40px;">
+	                    <span class="s1factor">Female</span>
+	             	    <input type="text" class = "genderRatio female" name="genderRatio female" style="width: 30px; height: 10px;" value = 0% disabled = "true" >
+	           	    </div>
+					<!--//female section -->     
+					</div>
+				</div>
+				<!-- age -->
+		
+				<div id = age>
+					
+					<div class="s1factor_title"> Age </div>
+								
+							<div id="ageOption">
+								<span class="s1factor optionTitle">Age Setting: </span>
+							  	<label> <input type = 'radio' name = 'ageSelectOption' id = 'ageSelect' checked = "checked">
+							  		<span class="s1factor">By Selecting</span></label>
+							    <label> <input type = 'radio' name = 'ageSelectOption'id = 'ageManual'>
+							    	<span class="s1factor" style="margin-bottom: 7px;">By Typing</span></label>
+							</div>
+							
+							<div id="percentOption">
+								<span class="s1factor optionTitle">Ratio Setting: </span>
+							
+								<input type="radio" id = "percentSelect" name="percentSelectOption" checked = "checked"/> 
+									<span class="s1factor"> Auto </span>
+								<input type="radio" id = "percentManual" name="percentSelectOption"  style = "margin-left:10px"/> 
+									<span class="s1factor"> Manual </span>
+							</div>
+							
+			
+					<div id = byCheckBox>
+					
+							<div id = "ageOptionGroup" > 
+								<!--<span class="s1factor">Age:</span>-->
+								<div class = "ageOption">
+									<input type="checkbox" class = "ageCheckbox" value="0"> 
+									<span class="s1factor">10↓</span>
+								</div>
+								<div class="ageOption">
+									<input type="checkbox" class = "ageCheckbox" value="1"> 
+									<span class="s1factor">10s</span>
+								</div>
+								
+								<div class="ageOption">
+									<input type="checkbox" class = "ageCheckbox" value="2"> 
+									<span class="s1factor">20s</span>
+								</div>
+								<div class="ageOption">
+									<input type="checkbox" class = "ageCheckbox" value="3"> 
+									<span class="s1factor">30s</span>
+								</div>
+								<div class="ageOption">
+									<input type="checkbox" class = "ageCheckbox" value="4"> 
+									<span class="s1factor">40s</span>
+								</div>
+								<div class="ageOption">
+									<input type="checkbox" class = "ageCheckbox" value="5"> 
+									<span class="s1factor">50s</span>
+								</div>
+								<div class="ageOption">
+									<input type="checkbox" class = "ageCheckbox" value="6"> 
+									<span class="s1factor">60↑</span>
+								</div>
+							
+							</div>
+
+							<div id = "agePercent"> 
+								<!--<div class="s1factor">(%):</div>-->
+									<input type="text" class = "ageRatio first" name="agePercent"  value = 0% disabled = "true" >
+									<input type="text" class = "ageRatio" name="agePercent"  value = 0% disabled = "true" >
+									<input type="text" class = "ageRatio" name="agePercent"  value = 0% disabled = "true" >
+									<input type="text" class = "ageRatio" name="agePercent"  value = 0% disabled = "true" >
+									<input type="text" class = "ageRatio" name="agePercent"  value = 0% disabled = "true" >
+									<input type="text" class = "ageRatio" name="agePercent"  value = 0% disabled = "true" >
+									<input type="text" class = "ageRatio" name="agePercent"  value = 0% disabled = "true" >
+							</div>
+					</div>
+					<!-- byCheckBox ends -->
+				</div>
+				<div id = byInputBox>
+					<div id = "ageRange" > 
+						<span style="font-size:13px;">Age:</span> 
+						<input type="text" class = "minAge"  name="ageRange"> ~
+						<input type="text"class = "maxAge" name="ageRange">
+					</div>
+
+									
+				</div>
+					<!-- ByInputBox ends -->
+					<!-- //age -->
+				<button type="submit" class="s1_save"> <span>SELECT</span></button>
+			</div>
+			<!--// s1-->
+			
+			<!--s2-->
+			<div id="s2Outside" class="outside_section" >
+				<span class=circle id="circle2">2</span>
+				<div class=step_name>Anthropometic Variable Selection</div>
+				<div id = s2down class = downCover>
+					<div  class="down"></div>
+				</div>
+			</div>
+			<div id="s2Inside" class="s2Selection accordion">
+				<div id="s2Button" >
+					<button class="s2Button">Selection</button>
+				</div>
+			</div>
+			<!--// s2-->
+			
+			<!--window-->
+			<div class="window">
+				
+		
+				<div id="mainWindow">
+					
+					<div id="windowUpper">
+						
+						<button class="s2Category">A. Standing Height</button>
+						<button class="s2Category">B. Standing Length</button>
+						<button class="s2Category">C. Standing Width</button>
+						<button class="s2Category">D. Standing Depth</button>
+						<button class="s2Category">E. Standing Circumference</button>
+						<button class="s2Category">F. Sitting</button>
+						<button class="s2Category">G. Standing etc.</button>
+						<button class="s2Category">H. Head</button>
+						<button class="s2Category">I. Hand</button>
+						<button class="s2Category">J. Foot</button>
+						<button class="s2Category">K. etc.</button>
+					</div>
+					<div id="windowLeft"></div>
+					<div id = "windowRight">
+						<div id="sizeList">
+		 	 			</div>
+						<div id="sizeCart">
+			       		   	<input type="button" href="#" class="close" value="Exit">
+							<input type="button" href="#" class="s2Confirm" value="Select">
+       		 			</div>
+    				</div>
+				</div>
+			
+			</div>
+    		<!-- //window-->	    
+			
+			<!--mask-->
+			<div id="mask"></div>
+			<!--//mask-->
+			
+			<!--s3-->
+			<div id="s3Outside" class="outside_section" >
+				<span class=circle id="circle3">3</span>
+				<div class=step_name>Key Dimension Selection</div>
+				<div id = s3down class = downCover>
+					<div  class="down"></div>
+				</div>
+			</div>
+			<div id="s3Inside" class="otherSelection accordion">
+				<div id="s3Option_1">
+					<button class = "btn_s3Option_1" value = "Analysis-Based"><span>Analysis-Based</span></button>
+					<button class = "btn_s3Option_1" value = "User-Defined"><span>User-Defined</span></button>
+				</div>
+				<div id="s3Option_2">
+					<div class="s3_analysis_option">
+						<ul style="list-style: none; align-content: left">
+							<li class="s3_option_list"><input type="checkbox" id = "regBox"> <span>Regression Analysis (RA)</span></li>
+							<li class="s3_option_list"><input type="checkbox" id = "pcaBox"> <span>Principal Component Analysis (PCA)</span></li>
+						</ul>
+					</div>
+					<div class="s3_user_option">
+					</div>
+				</div>
+			</div>
+			<!--//s3-->
+			
+			<!--s4-->
+			<div id="s4Outside" class="outside_section" >
+				<span class=circle id="circle4">4</span>
+				<div class=step_name>Grid Formation</div>
+				<div id = s4down class = downCover>
+					<div  class="down"></div>
+				</div>
+			</div>
+			<div id="s4Inside" class="otherSelection accordion"></div>
+			<!--//s4-->
+			
+			<!--s5-->
+			<div id="s5Outside" class="outside_section">
+				<span class=circle id="circle5">5</span>
+				<div class=step_name>DRHM Determination</div>
+				<div id = s5down class = downCover>
+					<div  class="down"></div>
+				</div>
+			</div>
+			<div id="s5Inside" class="otherSelection accordion">
+				<div class = decision></div>ttyle="margin-bottom: 10px;">save</button> -->
+			</div>	
+			<!--//s5-->
+			<button type="submit" class="save">SAVE</button>
+			
+		</div>
+		<!--//variation (화면 좌측)-->
+		
+		<!--visualization (화면 우측)-->
+		<div id = visualization>
+			<div id="mainWindow">
+				<div id="windowUpper" style="height:300px;">
+					<button class="exportButton" onclick="exportTableToExcel('analysisTable')">Download data into Excel</button>
+					<table id = "analysisTable">
+					    <thead>
+						<tr id="tableTitle">
+							<th id="BDTable" rowspan="2" style="width:300px;">Body Dimension</th>
+							<th rowspan="2">N</th>
+							<th rowspan="2">mean</th>
+							<th rowspan="2">SD</th>
+							<th rowspan="2">min</th>
+							<th colspan="9">Percentile</th>
+							<th rowspan="2">max</th>
+							</tr>
+						<tr id="tableTitle">
+							<th>p1</th>
+							<th>p5</th>
+							<th>p10</th>
+							<th>p25</th>
+							<th>p50</th>
+							<th>p75</th>
+							<th>p90</th>
+							<th>p95</th>
+							<th>p99</th>
+						</tr>
+					    </thead>
+					  
+					    
+					</table>
+				
+				
+			
+				</div>
+				
+				<div id="windowLeft">
+						<div id = correlationGraph>
+						 	<div id="legend"></div>
+  					  		<div id="grid"></div>
+						</div>
+
+				</div>
+				<div id="windowRight">
+					<div id = "scatterPlot"></div>
+					<div id = "latticePlot"></div>
+				</div>
+				
+			</div>
+
+		</div>
+		<!--//visualization (화면 우측)-->
+	</div>
+	<!-- //wrap-->
+	<script type="text/javascript" src="js/s1.js"> </script>
+	<script type="text/javascript" src="js/s2.js"> </script>
+	<script type="text/javascript" src="js/s3.js"> </script>
+	<script type="text/javascript" src="js/dataReader/dataReader.js"></script>
+	<script type="text/javascript" src="js/correlation/correlationMatrix.js"></script>
+	<script type="text/javascript" src="js/interaction.js"></script>
+	<script type="text/javascript" src="js/globalVariable.js"></script>
+	<!-- pca -->
+	<script type="text/javascript" src="js/pca/pca_plot.js"></script>
+	<script type="text/javascript" src="js/pca/pca_api.js"></script>
+	<script type="text/javascript" src="js/pca/beforePCA_dataParsing.js"></script>
+	<!-- lattice -->
+	<script type="text/javascript" src="js/lattice/latticePlot.js"></script>
+	<!-- <script type="text/javascript" src="js/lattice/d3_latticePlot.js"></script> -->
+</body>
+</html>
+
+<span class=circle id="circle3">3</span>

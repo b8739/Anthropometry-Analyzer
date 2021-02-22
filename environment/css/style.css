@@ -1,0 +1,468 @@
+/*Container*/
+
+#wrap{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	font-weight: lighter;
+}
+#variation{
+	position: relative;
+	width: 25%;
+	height: 100%;
+	float: left;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	background-color: #ffffff;
+}
+
+#visualization{
+	position: absolute;
+	width: 75%;
+	height: 100%;
+	background-color: #EEEFF1;
+	display: inline-block;
+	float: right;
+}
+
+/*-- Container*/
+
+/*header*/
+#title{
+	font-size: 25px;
+	color: #000000;
+}
+/*header*/
+
+/*variation outside_section*/
+.outside_section{
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	display: inline-block;
+	border-top: 3px solid rgba( 255, 255, 255, 0.5 );
+}
+/*--variation outside_section*/
+
+/*accordian slide*/
+#s1Inside{
+	display:none;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	padding-left: 28px;
+	background: #CCE0DF;
+	overflow: hidden;
+}
+#s2Inside{
+	display:none;
+	width: 99%;
+	height: 40px;
+}
+#s3Inside{
+	display:none;
+	width: 99%;
+	height: 100px;
+	background: #CCE0DF;
+	font-size: 0.8rem;
+}
+
+.otherSelection{
+	display:none;
+	width: 99%;
+	height: 60px;
+	position:relative;
+}
+
+/*s1*/
+.s1factor_title{
+	font-size: 15px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font-weight: bold;
+
+}
+.s1factor{
+	display: inline-block;
+	font-size: 13px;
+	margin-top: -2px;
+}
+.s1factor_L{
+	float: left;
+	font-size: 13px;
+}
+.s1_save{
+	width: 70px;
+	height: 19px;
+	font-size: 13px;
+	float: right;
+	margin-right: 10px;
+	text-align: center;
+	margin-bottom: 5px;
+	margin-top: 20px;
+
+}
+
+.save{
+	box-sizing: border-box;
+	position: absolute;
+	left: 20px;
+	bottom: 50px;
+	width: 90%;
+	height: 35px;
+	font-size: 18px;
+	background-color: #ffffff;
+	color: #536E7C;
+	border: 2px solid #536E7C;
+	border-radius: 7px;
+	margin-top: 5px;
+	margin-left: 0.5%;
+}
+.save:hover{
+	background-color: #536E7C;
+	border-color: #536E7C;
+	color: #ffffff;
+}
+
+
+/*ethnicity 레이아웃*/
+#ethnicity_button{
+	margin-left: 20px;
+}
+/*--ethnicity 레이아웃*/
+
+/*gender 레이아웃*/
+#genderSection{display: flex;}
+.genderCheckbox{
+	border: 1px solid #536E7C;
+}
+
+.genderRatio {
+	width: 30px; 
+	margin-left: 5px;
+	text-align:center;
+}
+/* --gender 레이아웃*/
+
+/* age 레이아웃*/
+#percentOption{margin-top:-7px;}
+#ageOptionGroup{display: flex;}
+.ageOption{flex-basis: 52px;}
+#agePercent{display: flex;}
+.ageRatio{flex-basis:20px; margin-right: 6px;}
+
+#ageOptionGroup > .s1factor{
+	margin-left: 11px;
+}
+#agePercent > .s1factor{
+	margin-left: 11px;
+}
+#agePercent .ageRatio {
+	width: 30px;
+	height: 10px;
+	margin-right:14px;
+	text-align: center;
+}
+.agePercentTextBox{
+	width: 30px;
+	height: 10px;
+}
+#agePercent .ageRate.first{
+	margin-left:2px;
+}
+#byInputBox{
+	display:none;
+}
+#byCheckBox{
+	margin-top: 10px;
+}
+
+#ageSelect{
+	margin-left: 24px;
+	font-size: 10px;
+}
+
+
+/* //age 레이아웃*/
+.minAge{
+	width: 20px;
+	height: 10px;
+} 
+.maxAge{
+	width: 20px;
+	height: 10px;
+}
+/*--s1*/
+
+/*s2*/
+#s2Button{
+	box-sizing: border-box;
+	width: 99%;
+	height: 40px;
+	text-align: center;
+	padding-top: 7px;
+}
+.s2Button{
+	padding: 5px 8px;
+}
+
+/*S2 Selection 화면 레이아웃*/
+#windowUpper{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 2;
+}
+#windowLeft{
+	grid-area: windowLeft;
+	border:2px solid #536E7C;
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+#windowRight{
+	grid-area: windowRight;
+
+	border:2px solid #536E7C;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+	grid-row-end: 3;
+}
+
+.s2Category{
+	padding: 5px 15px;
+	background-color: #FFFFFF;
+	border:2px solid #536E7C;
+	color: #536E7C;
+	font-weight:bold;
+	font-size: 0.8rem;	
+}
+.s2Category:hover{
+	background-color: #CCE0DF;
+	border-color: #536E7C;
+	color: #536E7C;
+}
+.s2Category:active{
+	background-color: #CCE0DF;
+	border-color: #536E7C;
+	color: #536E7C;
+}
+
+#sizeList{
+
+}
+#sizeCart{
+	border-top: 2px solid #536E7C;
+
+}
+/*-- S2 Selection 화면 레이아웃*/
+
+
+/*S2 Selection 화면 체크 리스트*/
+.bodyDimensions{
+/*	display: block;*/
+}
+.bodyDimensionsTitles{
+	font-size: 10px;
+}
+/*-- S2 Selection 화면 체크 리스트*/
+
+/*--s2*/
+.clear{
+	width: 50px;
+	font-size: 13px;
+	float: right;
+	margin-right: 10px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+/*s3*/
+#s3Option_1{
+	display: flex;
+	justify-content: center;
+	padding: 15px 0 10px;
+	border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.s3_analysis_option{
+	display:flex;
+	justify-content: center;
+
+	
+
+}
+#s3Option_1 button {padding:5px 8px;}
+#s3Option_1 button:first-child{margin-right:7px;}
+#s3Option_1 button:nth-child(2){margin-left:7px;}
+
+/*--s3*/
+
+/*삼각형*/
+
+/*삼각형 ↓*/
+.downCover{
+	float: right;
+	padding:2px 6px 10px 6px;
+}
+.down{
+	width: 0px;
+	height: 0px;
+	border-right: 12px solid transparent;
+	border-bottom: 12px solid #CCE0DF;
+	transform: rotate(-45deg);
+	display: inline-block;
+	float: right;
+}
+.downCover.rotate {
+	transform: rotate(180deg);
+}
+/*--삼각형 ↓*/
+
+/*삼각형 ↑*/
+.up{
+	width: 0px;
+	height: 0px;
+	border-right: 12px solid transparent;
+	border-bottom: 12px solid #CCE0DF;
+	transform: rotate(90deg);
+	float: right;
+}
+/*--삼각형 ↑*/
+
+/*--삼각형*/
+.circle{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: #ffffff;
+	border:1px solid #CCCCCC;
+	font-size: 17px;
+	color: #cccccc;
+	text-align: center;
+	line-height: 40px;
+	float: left;
+}
+.step_name{
+	color: #4D4D4D;
+	margin-top: 12px;
+	margin-left: 10px;
+	float: left;
+	display: inline-block;
+}
+.menudesign{
+	border: 1px solid #536E7C;
+}
+
+/*hidden 효과*/
+.hidden {
+  display: none;
+}
+
+.unhidden {
+	display: block;
+}
+/*--hidden 효과*/
+
+
+/*S2 Selection 화면 흐림 효과*/
+#mask{
+	position: fixed;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	background: rgba( 0, 0, 0, 0.5 );
+	display: none;
+}
+
+.window{
+    display:none;
+    background-color: #FFFFFF;
+    position:fixed;
+    top: 0px;
+    left: 40px;  
+    width: 90%;
+    height: 90%;
+    margin: 2%;
+    /*background-color: #ffffff;*/
+    z-index:2;
+}
+#mainWindow{
+	display: grid;
+	padding: 15px;
+	grid-template-columns: 50% 1fr;
+    grid-template-rows: auto 1fr 50px;
+    height: 100%;
+    grid-gap: 15px;
+
+}
+/*--S2 Selection 화면 흐림 효과*/
+
+
+/*STEP3*/
+/*테이블*/
+
+#analysisTable{
+	/*margin-top: -120px;*/
+	border: 2px solid #0E2E47;
+	background-color: #ffffff;
+	height: 100px;
+	text-align: center;
+	font-size: 12px;
+	position: static;
+}
+th, td{
+	border: 1px solid #0E2E47;
+	border-collapse: collapse;
+	background-color: #ffffff;
+	width:60px;
+	
+}
+
+/*--테이블*/
+/*Export 버튼*/
+.exportButton{
+	width: 200px;
+	height: 30px;
+	font-size: 13px;
+	float: right;
+	text-align: center;
+
+}
+.s3_option_list{
+	float: left;
+	margin-right: 5px;
+	font-size: 12px; 
+	cursor: pointer;
+}
+
+/*correlation matrix*/
+ rect.selected {
+    stroke: #000;
+    stroke-width: 2px;
+  }
+  .axis .domain {
+    display: none;
+  }
+  .axis .tick text.selected {
+    font-weight: bold;
+    font-size: 1.2em;
+    fill: #47ff63;
+  }
+  .axis .tick line.selected {
+    stroke: #47ff63;  
+  }
+  .tip {
+    position: absolute;
+    font-size: .8em;
+    text-align: center;
+    text-shadow: -1px -1px 1px #ffffff, -1px 0px 1px #ffffff, -1px 1px 1px #ffffff, 0px -1px 1px #ffffff, 0px 1px 1px #ffffff, 1px -1px 1px #ffffff, 1px 0px 1px #ffffff, 1px 1px 1px #ffffff;
+  }    
+  /*correlation matrix*/
